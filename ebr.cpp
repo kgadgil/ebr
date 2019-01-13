@@ -7,15 +7,12 @@
 #include <thread>
 
 template<typename T>
-class block {
-		//block header : retire_epoch, retire_next
-		// Node(eg: list node)
+struct Node {
 	int retire_epoch;
-	struct Node {
-		T data;
-		Node* next;
-	}
+	T data;
+	Node* next;
 }
+
 
 template<typename T>
 class memory_manager(){
