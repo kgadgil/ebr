@@ -11,10 +11,13 @@ void function(){
 }
 
 int main(){
-	int val = 0;
-	std::thread t1(function);
-	std::thread t2(function);
-	t1.join();
-	t2.join();
+	int thread_cnt = 6;
+	std::thread threadArr[thread_cnt];
+	for (int i = 0; i < thread_cnt; i++){
+		threadArr[i] = std::thread(function);
+	}
+	for (int i = 0; i < thread_cnt; i++){
+		threadArr[i].join();
+	}
 	return 0;
 }
