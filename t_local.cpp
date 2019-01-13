@@ -6,7 +6,7 @@ Thread-local storage class specifier example
 
 int main(){
 	int thread_cnt = 6;
-	int x = 0;
+	thread_local int x = 0;
 	std::thread threadArr[thread_cnt];
 	for (int i = 0; i < thread_cnt; i++){
 		threadArr[i] = std::thread([&]{
